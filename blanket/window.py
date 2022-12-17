@@ -204,13 +204,19 @@ class BlanketWindow(Adw.ApplicationWindow):
                               sound.name, sound.uri)
                 # Add SoundObject to SoundsGroup
                 self.custom_sounds.add(sound)
+                
+        ogg = 'audio/ogg'
+        flac = 'audio/flac'
+        wav = 'audio/wav'
+        xwav = 'audio/x-wav'
+        mp3 ='audio/mpeg'
 
         filters = {
-            'Supported audio files': ['audio/ogg', 'audio/flac', 'audio/x-wav', 'audio/wav', 'audio/mpeg'],
-            'Ogg': ['audio/ogg'],
-            'FLAC': ['audio/flac'],
-            'WAV': ['audio/x-wav', 'audio/wav'],
-            'MP3': ['audio/mpeg'],
+            'Supported audio files': [ogg, flac, wav, xwav, mp3],
+            'Ogg': [ogg],
+            'FLAC': [flac],
+            'WAV': [wav, xwav],
+            'MP3': [mp3],
         }
 
         self.filechooser = Gtk.FileChooserNative.new(
